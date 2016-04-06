@@ -12,7 +12,7 @@
 
 - Pull branch1 to your local development environment (STS for high compatibility) 
 - Run your application as Java application
-- Browse to  localhost:/localhost:8080/Aconex
+- Browse to localhost:8080/Aconex
 
 #Supported functionality
 
