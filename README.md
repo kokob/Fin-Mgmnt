@@ -1,7 +1,8 @@
 # Fin-Mgmnt
 #Project Features
 
-- Spring framework
+- Spring framework 4.0
+- Java 8
 - Embedded H2 database
 - Embedded tomcat server
 - Bootstrap framework
@@ -26,7 +27,7 @@ IDE
 - CRUD operations on Contracts
 - Numeric Input validation using JQuery
 - Contract Budget Percentage auto Calculated
-
+- Check the satus of data-base by browsing to localhost:8080/h2
 
 #Future improvment 
 
