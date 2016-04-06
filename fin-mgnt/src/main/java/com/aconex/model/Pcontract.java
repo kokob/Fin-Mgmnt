@@ -28,8 +28,27 @@ public class Pcontract implements Serializable {
 	private BigDecimal commitedCost;
 	private int forecast;
 	private BigDecimal paid;
-	private int complete;
+	private double percentageCompleted;
 	private String vendor;
+	
+	public Pcontract(){
+	}
+
+	public Pcontract(String name, String description, String contractCode, BigDecimal budget, BigDecimal commitedCost,
+			int forecast, BigDecimal paid, double percentageCompleted, String vendor) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.contractCode = contractCode;
+		this.budget = budget;
+		this.commitedCost = commitedCost;
+		this.forecast = forecast;
+		this.paid = paid;
+		this.percentageCompleted = percentageCompleted;
+		this.vendor = vendor;
+	}
+
+
 
 	public BigDecimal getBudget() {
 		return budget;
@@ -39,8 +58,8 @@ public class Pcontract implements Serializable {
 		return commitedCost;
 	}
 
-	public int getComplete() {
-		return complete;
+	public double getPercentageCompleted() {
+		return percentageCompleted;
 	}
 
 	public String getContractCode() {
@@ -83,8 +102,8 @@ public class Pcontract implements Serializable {
 		this.commitedCost = commitedCost;
 	}
 
-	public void setComplete(int complete) {
-		this.complete = complete;
+	public void setPercentageCompleted(double percentageCompleted) {
+		this.percentageCompleted = percentageCompleted;
 	}
 
 	public void setContractCode(String contractCode) {
@@ -118,5 +137,11 @@ public class Pcontract implements Serializable {
 	public void setVendor(String vendor) {
 		this.vendor = vendor;
 	}
+
+	public void calculatePercentage() {
+		
+		this.percentageCompleted = (this.budget.doubleValue()/this.project.getTotalProjectBudget().doubleValue()*100);
+		
+	} 
 
 }

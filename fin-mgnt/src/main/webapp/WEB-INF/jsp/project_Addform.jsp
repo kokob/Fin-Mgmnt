@@ -18,7 +18,7 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<div class="navbar-header">
-        			 <a class="brand" href="/"> Home Page</a> 
+        			 <a class="brand" href="/homePage"> Home Page</a> 
 					<ul class="nav">
 					</ul>
 				</div>
@@ -33,31 +33,28 @@
       
     <spring:url value="/saveProject" var="action" />
 	<form:form action="${action}" method="POST" modelAttribute="project">
-		<form:errors path="*" cssClass="errorblock" element="div" />
 			<div class="control-group">
 			<label for="textinput1">
 	          Project code:
 	        </label>	
 			<form:input path="projectCode" cssErrorClass="error" />
-			<form:errors path="projectCode" cssClass="error" />
 			
 			<label for="textinput1">
 	          Project Name:
 	        </label>	
 			<form:input path="projectName" cssErrorClass="error" />
-			<form:errors path="projectName" cssClass="error" />
 			
 			<label for="textinput1">
 	          Project vendor:
 	        </label>	
 			<form:input path="projectVendor" cssErrorClass="error" />
-			<form:errors path="projectVendor" cssClass="error" />
+			
 			
 			<label for="textinput1">
 	          Project Budget:
 	        </label>	
-			<form:input path="totalProjectBudget" cssErrorClass="error" />
-			<form:errors path="totalProjectBudget" cssClass="error" />
+			<form:input class="numberOnly" path="totalProjectBudget" cssErrorClass="error" />
+			
 			
 			</div>
 			
@@ -66,7 +63,9 @@
 	  </div>
     </div>
 
-     <script src="jquery-1.8.3.js">
+     <script src="jquery-1.11.2.js">
+    </script>
+    <script src="assets/js/fin-mgnt.js">
     </script>
     <script src="assets/js/bootstrap.js">
     </script>

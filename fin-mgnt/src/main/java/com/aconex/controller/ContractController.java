@@ -23,6 +23,7 @@ public class ContractController {
 
 	@Autowired
 	private PcontractService pcontractService;
+	
 	@Autowired
 	private ProjectService projectService;
 

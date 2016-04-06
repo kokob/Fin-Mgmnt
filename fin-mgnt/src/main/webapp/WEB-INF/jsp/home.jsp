@@ -46,7 +46,7 @@
       </div>
     </div>
     
-    <script src="jquery-1.8.3.js">
+    <script src="jquery-1.11.2.js">
     </script>
     
     <script src="assets/js/bootstrap.js">

@@ -18,7 +18,7 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="brand" href="/"> Home Page</a>
+					<a class="brand" href="/homePage"> Home Page</a>
 					<a
 						class="btn btn-primary offset8"
 						href="../getProjectById/${contract.project.id}">Back to ${contract.project.projectName } </a>
@@ -71,7 +71,7 @@
 						<p><strong>Contract Paid Amount</strong> | ${contract.paid} </p> 
 						<br />
 
-						<p><strong>Contract Complete %</strong> | ${contract.complete} </p> 
+						<p><strong>Contract Complete %</strong> | ${contract.percentageCompleted} </p> 
 						<br />
 
 					</div>
@@ -94,7 +94,6 @@
 		
 		<spring:url value="/updateContract/${contract.id}" var="action" />
 		<form:form action="${action}" method="POST" modelAttribute="contract">
-		<form:errors path="*" cssClass="errorblock" element="div" />
 		<div class="modal-body">
 			<div class="control-group">
 			<div class="row">
@@ -103,56 +102,43 @@
 	          Contract code:
 	        </label>	
 			<form:input path="contractCode" cssErrorClass="error" />
-			<form:errors path="contractCode" cssClass="error" />
 			
 			<label for="textinput1">
 	          Contract Name:
 	        </label>	
 			<form:input path="name" cssErrorClass="error" />
-			<form:errors path="name" cssClass="error" />
 			
 			<label for="textinput1">
 	          Contract Description:
 	        </label>	
 			<form:input path="description" cssErrorClass="error" />
-			<form:errors path="description" cssClass="error" />
 			
 			<label for="textinput1">
 	          Contract vendor:
 	        </label>	
 			<form:input path="vendor" cssErrorClass="error" />
-			<form:errors path="vendor" cssClass="error" />
-			
-			<label for="textinput1">
-	          Contract Budget:
-	        </label>	
-			<form:input path="budget" cssErrorClass="error" />
-			<form:errors path="budget" cssClass="error" />
 			</div>
 			<div class="span3">
 			<label for="textinput1">
+	          Contract Budget:
+	        </label>	
+			<form:input class="numberOnly" path="budget" cssErrorClass="error" />
+			
+			<label for="textinput1">
 	          Contract committed Cost:
 	        </label>	
-			<form:input path="commitedCost" cssErrorClass="error" />
-			<form:errors path="commitedCost" cssClass="error" />
+			<form:input class="numberOnly" path="commitedCost" cssErrorClass="error" />
 			
 			<label for="textinput1">
 	          Contract Forecast:
 	        </label>	
-			<form:input path="forecast" cssErrorClass="error" />
-			<form:errors path="forecast" cssClass="error" />
+			<form:input class="numberOnly" path="forecast" cssErrorClass="error" />
 			
 			<label for="textinput1">
 	          Contract Paid Amount:
 	        </label>	
-			<form:input path="paid" cssErrorClass="error" />
-			<form:errors path="paid" cssClass="error" />
-			
-			<label for="textinput1">
-	          Contract Complete %:
-	        </label>	
-			<form:input path="complete" cssErrorClass="error" />
-			<form:errors path="complete" cssClass="error" />
+			<form:input class="numberOnly" path="paid" cssErrorClass="error" />
+		
 			
 			</div>
 			</div>
@@ -166,9 +152,9 @@
 	  </div>
 
 	<script src="../jquery-1.11.2.js">
-		
-	</script>
-
+    </script>
+    <script src="../assets/js/fin-mgnt.js">
+    </script>
 	<script src="../assets/js/bootstrap.js">
 		
 	</script>

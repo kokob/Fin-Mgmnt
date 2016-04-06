@@ -5891,3 +5891,8 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+@media (min-width:980px){
+	.navbar + .container{
+	margin-top:61px;
+	}
+}

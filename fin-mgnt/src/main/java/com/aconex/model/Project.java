@@ -2,6 +2,7 @@ package com.aconex.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,10 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
-
 @Entity
-
 public class Project implements Serializable {
 
 	private static final long serialVersionUID = -6797798475854053407L;
@@ -34,6 +32,19 @@ public class Project implements Serializable {
 		
 	@OneToMany(fetch=FetchType.EAGER ,cascade=CascadeType.ALL)
 	private List<Pcontract> pcontracts;
+	
+	public Project(){
+		
+	}
+	
+	public Project(String projectName, BigDecimal totalProjectBudget, String projectCode, String projectVendor) {
+		super();
+		this.projectName = projectName;
+		this.totalProjectBudget = totalProjectBudget;
+		this.projectCode = projectCode;
+		this.projectVendor = projectVendor;
+		this.pcontracts = new ArrayList<Pcontract>();
+	}
 
 	public List<Pcontract> getContracts() {
 		return pcontracts;
@@ -89,6 +100,11 @@ public class Project implements Serializable {
 
 	public void setTotalProjectBudget(BigDecimal totalProjectBudget) {
 		this.totalProjectBudget = totalProjectBudget;
+	}
+	
+	public void addContract(Pcontract contract){
+		this.pcontracts.add(contract);
+		contract.setProject(this);
 	}
 	
 

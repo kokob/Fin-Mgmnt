@@ -18,7 +18,7 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="brand" href="/"> Home Page</a> 
+					<a class="brand" href="/homePage"> Home Page</a> 
 					<a class="btn btn-primary offset8" href="/addProject"> Add Project </a>
 					<ul class="nav">
 					</ul>
@@ -38,7 +38,7 @@
 			<table class="table table-striped table-hover">
 				<tr>
 					<th>Project Code</th>
-					<th>Project Name</th>
+					<th colspan="2">Project Name</th>
 				</tr>
 
 				<c:forEach items="${projects}" var="project">

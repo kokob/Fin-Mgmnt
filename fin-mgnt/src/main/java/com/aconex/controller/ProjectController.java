@@ -22,6 +22,11 @@ public class ProjectController {
 
 	@Autowired
 	private ProjectService projectService;
+	
+	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
+	public String backToHomePage() {
+		return "home";
+	}
 
 	@RequestMapping(value = "/getAllProjects", method = RequestMethod.GET)
 	public String list(Model model) {
@@ -64,9 +69,7 @@ public class ProjectController {
 		if (result.hasErrors()) {
 			return "project_Editform";
 		} else {
-			
-			//project.getContracts().forEach(x->System.out.println(x.getName()));
-									
+					
 			 Project updatedProject = projectService.update(id, project);
 			 model.addAttribute("project", updatedProject);
 			return "projectDetails";

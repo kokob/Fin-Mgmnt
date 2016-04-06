@@ -18,8 +18,12 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="brand" href="/"> Home Page</a> <a
-						class="btn btn-primary offset8"
+					<a class="brand" href="/homePage"> Home Page  |</a> 
+					<a class="brand" href="/getAllProjects">
+        				All Projects
+        			</a>
+					<a
+						class="btn btn-primary offset7"
 						href="../addContract/${project.id}"> Add Contract </a>
 					<ul class="nav">
 					</ul>
@@ -61,25 +65,20 @@
 		
 		<spring:url value="/updateProject/${project.id}" var="action" />
 		<form:form action="${action}" method="POST" modelAttribute="project">
-		<form:errors path="*" cssClass="errorblock" element="div" />
 			<div class="modal-body">
 
 				<div class="control-group">
 					<label for="textinput1"> Project code: </label>
 					<form:input path="projectCode" cssErrorClass="error" />
-					<form:errors path="projectCode" cssClass="error" />
 
 					<label for="textinput1"> Project Name: </label>
 					<form:input path="projectName" cssErrorClass="error" />
-					<form:errors path="projectName" cssClass="error" />
 
 					<label for="textinput1"> Project vendor: </label>
 					<form:input path="projectVendor" cssErrorClass="error" />
-					<form:errors path="projectVendor" cssClass="error" />
 
 					<label for="textinput1"> Project Budget: </label>
-					<form:input path="totalProjectBudget" cssErrorClass="error" />
-					<form:errors path="totalProjectBudget" cssClass="error" />
+					<form:input class="numberOnly" path="totalProjectBudget" cssErrorClass="error" />
 
 				</div>
 
@@ -109,7 +108,7 @@
 						<td>${contract.contractCode}</td>
 						<td>${contract.name}</td>
 						<td>${contract.description}</td>
-						<td>${contract.complete}</td>
+						<td>${contract.percentageCompleted}</td>
 
 						<td>
 						<a class="btn btn-info" href="/getContractById/${contract.id}"> View </a>
@@ -126,8 +125,9 @@
 	</div>
 
 	<script src="../jquery-1.11.2.js">
-		
-	</script>
+    </script>
+    <script src="../assets/js/fin-mgnt.js">
+    </script>
 
 	<script src="../assets/js/bootstrap.js">
 		
