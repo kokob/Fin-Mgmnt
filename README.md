@@ -8,11 +8,17 @@
 - JQuery 
 - JSP
 
-#How to run
+#How to run 
 
-- Pull branch1 to your local development environment (STS for high compatibility) 
-- Run your application as Java application
-- Browse to localhost:8080/Aconex
+Command line 
+ - download zip folder from git-hub and unizp the folder
+ - navigate to the folder and run this command  $ mvn spring-boot:run
+ - Browse to localhost:8080/Aconex
+
+IDE
+ - Pull branch1 to your local development environment (STS for high compatibility) 
+ - Run your application as Java application
+ - Browse to localhost:8080/Aconex
 
 #Supported functionality
 
