@@ -1,4 +1,4 @@
-# Fin-Mgmnt
+# Project Managment
 #Project Features
 
 - Spring framework 4.0
