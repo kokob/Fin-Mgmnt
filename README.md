@@ -1,4 +1,4 @@
-# Project Managment
+# Project Management
 #Project Features
 
 - Spring framework 4.0
